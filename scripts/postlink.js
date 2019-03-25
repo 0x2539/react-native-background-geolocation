@@ -25,7 +25,15 @@ if (!isInstalled.forAndroid()) {
 
 if (!isInstalled.forIos()) {
   const plist = require('plist');
-  const infoPlistPath = path.join(appDir, 'ios', manifest.name, 'Info.plist');
+  const infoPlistPathDefault = path.join(appDir, 'ios', manifest.name, 'Info.plist');
+  const infoPlistPathSupporting = path.join(appDir, 'ios', manifest.name, 'Supporting', 'Info.plist');
+  let infoPlistPath = '';
+  if (fs.exists(infoPlistPathDefault)) {
+    infoPlistPath = infoPlistPathDefault
+  } else {
+    infoPlistPath = infoPlistPathSupporting
+  }
+
   const infoPlistFile = fs.readFileSync(infoPlistPath, 'utf8');
   const infoPlist = plist.parse(infoPlistFile);
   const pListChanges = {};
