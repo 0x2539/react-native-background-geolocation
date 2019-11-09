@@ -1,5 +1,48 @@
 ## Changelog
 
+### [0.6.3] - 2019-09-16
+### Fixed
+- Android fix RejectedExecutionException (fixes #319 #259 #243 #149 #68)
+- Android add stop guard
+
+### [0.6.2] - 2019-09-10
+### Changed
+- Android remove preoreo target
+- Android add android.permission.FOREGROUND_SERVICE permission
+
+### [0.6.1] - 2019-08-29
+### Changed
+- Remove deprecated isLocationEnabled method
+- Android use react-native headless JS instead of jsevaluator
+
+### [0.6.0] - 2019-08-27
+### Fixed
+- Android fix conflicting provider (fixes #344)
+
+### Changed
+- Android autolinking for RN 0.60
+
+### [0.5.6] - 2019-08-27
+### Fixed
+- Android allow to start service from background on API >=26 (fixes #356)
+
+### [0.5.5] - 2019-08-13
+### Fixed
+- Android fix tone generator crash
+- Android Removed minsdk from manifest (fixes #357) - @maleriepace
+- Android add additional check for applicationId (PR #36 common repo) - @mysport12
+- Android minSdk version should not be declared on manifest - @wesleycoder and @maleriepace
+- Android Change the react-native link command repositories (PR #374) - @mantaroh
+- Update CHANGES_zh-Hans.md - @Kennytian
+- Fixed typo in README - @diegogurpegui
+
+Many thanks to all contributors
+
+### [0.5.2] - 2019-03-28
+### Fixed
+- Android fix don't start service on app visibility change events fixes
+- Android ignore failing instrumentation tests
+
 ### [0.5.1] - 2019-03-25
 ### Fixed
 - Android fix #360 - When app crashes for other reasons the service is started by the system
